@@ -1,10 +1,13 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { PokemonsListComponent } from './pokemons-list/pokemons-list.component';
 
 
 
 @NgModule({
-  declarations: [],
+  declarations: [
+    PokemonsListComponent
+  ],
   imports: [
     CommonModule
   ]
