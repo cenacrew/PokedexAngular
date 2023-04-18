@@ -1,1 +1,15 @@
-<p>pokemons-list works!</p>
+<div class="pokemons">
+  <div class="pokemons__list">
+    <div class="pokemons__list__item" *ngFor="let pokemon of pokemons">
+      <div class="pokemons__list__item__id" data-testid="id">
+        <span>{{ pokemon.id }}</span>
+      </div>
+      <div class="pokemons__list__item__sprite">
+        <img data-testid="sprite" [src]="pokemon.sprite" alt="{{pokemon.name}} sprite" />
+      </div>
+      <div class="pokemons__list__item__name" data-testid="name">
+        <span>{{ pokemon.name }}</span>
+      </div>
+    </div>
+  </div>
+</div>
