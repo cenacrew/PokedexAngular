@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 
-import { Pokemon } from '../../../models/pokemon';
+import { Pokemon } from '../../../models/pokemon.model';
 import { PokemonService } from 'src/app/services/pokemon.service';
 
 @Component({
@@ -9,7 +9,7 @@ import { PokemonService } from 'src/app/services/pokemon.service';
   styleUrls: ['./pokemons-list.component.scss']
 })
 export class PokemonsListComponent {
-  public pokemons: Pokemon[] = []
+  pokemons: Pokemon[]
 
   constructor(private pokemonService: PokemonService) { 
     this.pokemons = this.pokemonService.getPokemon();
