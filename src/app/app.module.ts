@@ -7,12 +7,14 @@ import { PokemonsModule } from './modules/pokemons/pokemons.module';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    PokemonsModule
+    PokemonsModule,
+
   ],
   providers: [],
   bootstrap: [AppComponent]
