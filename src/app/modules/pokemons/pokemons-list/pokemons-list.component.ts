@@ -9,11 +9,16 @@ import { PokemonService } from 'src/app/services/pokemon.service';
   styleUrls: ['./pokemons-list.component.scss']
 })
 export class PokemonsListComponent {
-  pokemons: Pokemon[]
+  pokemons: Pokemon[] = [];
 
-  constructor(private pokemonService: PokemonService) { 
-    this.pokemons = this.pokemonService.getPokemon();
+  constructor(private pokemonService: PokemonService) {}
+
+  ngOnInit(): void {
+    this.pokemonService.getPokemon().subscribe((pokemons: Pokemon[]) => {
+      this.pokemons = pokemons;
+    });
   }
+
 
   handlePokemonClicked(name: string): void {
     console.log('pokemon clicked :', name);

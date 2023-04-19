@@ -2,6 +2,7 @@ import {NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
 import { HighlightDirective } from '@/directives/highlight.directive';
 import { ShadowDirective } from '@/directives/shadow.directive';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 
 @NgModule({
     declarations: [
@@ -9,7 +10,8 @@ import { ShadowDirective } from '@/directives/shadow.directive';
         ShadowDirective
     ],
     imports: [
-        CommonModule
+        CommonModule,
+        HttpClientModule
     ],
     exports: [
         HighlightDirective,
