@@ -10,12 +10,14 @@ import { Pokemon } from '../models/pokemon.model';
 export class PokemonService {
 
   private readonly POKEAPI_URL = 'https://pokeapi.co/api/v2/pokemon';
-  private readonly FIRST_150 = '?limit=150';
+  private readonly POKE_LIMIT = '?limit=1000';
 
   constructor(private http: HttpClient) {}
 
+
+
   getPokemon(): Observable<Pokemon[]> {
-    return this.http.get(`${this.POKEAPI_URL}${this.FIRST_150}`).pipe(
+    return this.http.get(`${this.POKEAPI_URL}${this.POKE_LIMIT}`).pipe(
       map((response: any) => {
         return response.results.map((pokemon: any) => {
           const id = this.getIdFromUrl(pokemon.url);
@@ -25,6 +27,19 @@ export class PokemonService {
 
           return { id, name, generation, sprite } as Pokemon;
         });
+      })
+    );
+  }
+
+  getPokemonById(id: number): Observable<Pokemon> {
+    return this.http.get(`${this.POKEAPI_URL}/${id}`).pipe(
+      map((response: any) => {
+        const id = response.id;
+        const name = response.name;
+        const generation = this.getGeneration(id);
+        const sprite = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${id}.png`;
+
+        return { id, name, generation, sprite } as Pokemon;
       })
     );
   }

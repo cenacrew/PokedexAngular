@@ -10,13 +10,16 @@ import { PokemonService } from 'src/app/services/pokemon.service';
 })
 export class PokemonsListComponent {
   pokemons: Pokemon[] = [];
+  errorMessage?: string;
 
   constructor(private pokemonService: PokemonService) {}
 
   ngOnInit(): void {
-    this.pokemonService.getPokemon().subscribe((pokemons: Pokemon[]) => {
+    this.pokemonService.getPokemon().subscribe({next:(pokemons: Pokemon[]) => {
       this.pokemons = pokemons;
-    });
+    }, error: (err) => {
+      this.errorMessage = err.message
+    }});
   }
 
 

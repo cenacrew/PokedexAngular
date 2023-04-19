@@ -4,6 +4,7 @@ import { PokemonsListComponent } from './pokemons-list/pokemons-list.component';
 import { SharedModule } from '@/shared/shared.module';
 import { PokemonsListItemComponent } from './pokemons-list-item/pokemons-list-item.component';
 import { PokemonDetailsComponent } from './pokemon-details/pokemon-details.component';
+import { RouterModule } from '@angular/router';
 
 
 @NgModule({
@@ -14,11 +15,13 @@ import { PokemonDetailsComponent } from './pokemon-details/pokemon-details.compo
   ],
   imports: [
     CommonModule,
-    SharedModule
+    SharedModule,
+    RouterModule
   ],
   exports:[
     PokemonsListComponent,
     PokemonsListItemComponent,
+    RouterModule
   ]
 })
 export class PokemonsModule { }

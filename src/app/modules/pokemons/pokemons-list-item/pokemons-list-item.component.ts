@@ -10,7 +10,8 @@ export class PokemonsListItemComponent {
 
     @Input() pokemon!: Pokemon;
     @Output() pokemonClicked = new EventEmitter<string>();
-    handleClick(): void {
+    handleClick(ev : Event): void {
       this.pokemonClicked.emit(this.pokemon?.name);
+      //ev.stopPropagation();
     }
 }

@@ -1,0 +1,67 @@
+/* Parent container styles */
+.pokemon {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 1rem;
+    padding: 1rem;
+    background-color: #fff;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+  }
+  
+  /* ID container styles */
+  .pokemon_id {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    color: #333;
+  }
+  
+  /* Sprite container styles */
+  .pokemon_sprite {
+    margin-bottom: 1rem;
+  }
+  
+  /* Name container styles */
+  .pokemon_name {
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-transform: capitalize;
+    margin-bottom: 0.5rem;
+    color: #333;
+  }
+  
+  /* Generation container styles */
+  .pokemon_generation {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+    color: #666;
+  }
+  
+  /* Error message container styles */
+  app-error-message {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #f00;
+    margin-bottom: 1rem;
+  }
+  
+  /* Back button styles */
+  a {
+    font-size: 1rem;
+    text-decoration: none;
+    color: #333;
+    background-color: #eee;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    transition: background-color 0.2s ease-in-out;
+  
+    &:hover {
+      background-color: #ccc;
+    }
+  }

@@ -1,1 +1,22 @@
-<p>pokemon-details works!</p>
+<app-error-message [errorMessage]="errorMessage"></app-error-message>
+
+<div *ngIf="pokemon" class="pokemon" appShadow>
+  <div class="pokemon_id" data-testid="id">
+    {{pokemon.id}}
+  </div>
+  <div class="pokemons_sprite">
+    <img
+      data-testid="sprite"
+      [src]="pokemon.sprite"
+      alt="{{ pokemon.name }} sprite"
+    />
+  </div>
+  <div class="pokemon_name" data-testid="name">
+    {{pokemon.name}}
+  </div>
+  <div class="pokemon_generation" data-testid="generation">
+    {{pokemon.generation}}
+  </div>
+</div>
+
+<a routerLink="..">Back</a>

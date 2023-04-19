@@ -1,5 +1,6 @@
 <div class="pokemons">
   <div class="pokemons_list">
-      <app-pokemons-list-item *ngFor="let pokemon of pokemons" [pokemon]="pokemon" (pokemonClicked)="handlePokemonClicked($event)"></app-pokemons-list-item>
+    <app-error-message [errorMessage]="errorMessage"></app-error-message>
+    <app-pokemons-list-item *ngFor="let pokemon of pokemons" [pokemon]="pokemon" (pokemonClicked)="handlePokemonClicked($event)" [routerLink]="['/pokemons', pokemon.id]"></app-pokemons-list-item>
   </div>
 </div>
