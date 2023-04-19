@@ -1,15 +1,5 @@
 <div class="pokemons">
   <div class="pokemons_list">
-    <div shadow class="pokemons_list_item" *ngFor="let pokemon of pokemons">
-      <div class="pokemons_list_item_id" data-testid="id">
-        <span>{{ pokemon.id }}</span>
-      </div>
-      <div class="pokemons_list_item_sprite">
-        <img data-testid="sprite" [src]="pokemon.sprite" alt="{{pokemon.name}} sprite" />
-      </div>
-      <div class="pokemons_list_item_name" data-testid="name">
-        <span>{{ pokemon.name }}</span>
-      </div>
-    </div>
+      <app-pokemons-list-item *ngFor="let pokemon of pokemons" [pokemon]="pokemon"></app-pokemons-list-item>
   </div>
 </div>

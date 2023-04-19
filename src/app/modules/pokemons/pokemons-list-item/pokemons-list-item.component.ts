@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Pokemon } from '@/models';
+import { Component,Input} from '@angular/core';
 
 @Component({
   selector: 'app-pokemons-list-item',
@@ -7,4 +8,5 @@ import { Component } from '@angular/core';
 })
 export class PokemonsListItemComponent {
 
+    @Input() pokemon!: Pokemon;
 }

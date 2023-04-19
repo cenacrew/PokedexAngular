@@ -15,7 +15,8 @@ import { PokemonsListItemComponent } from './pokemons-list-item/pokemons-list-it
     SharedModule
   ],
   exports:[
-    PokemonsListComponent
+    PokemonsListComponent,
+    PokemonsListItemComponent,
   ]
 })
 export class PokemonsModule { }
