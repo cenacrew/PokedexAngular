@@ -1,4 +1,4 @@
-import { Component,Input} from '@angular/core';
+import { Component } from '@angular/core';
 
 import { Pokemon } from '@/models';
 import { PokemonService } from 'src/app/services/pokemon.service';
