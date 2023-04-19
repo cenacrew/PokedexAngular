@@ -14,5 +14,9 @@ export class PokemonsListComponent {
   constructor(private pokemonService: PokemonService) { 
     this.pokemons = this.pokemonService.getPokemon();
   }
+
+  handlePokemonClicked(name: string): void {
+    console.log('pokemon clicked :', name);
+  }
 }
 

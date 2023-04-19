@@ -1,5 +1,5 @@
 import { Pokemon } from '@/models';
-import { Component,Input} from '@angular/core';
+import { Component,Input, EventEmitter, Output} from '@angular/core';
 
 @Component({
   selector: 'app-pokemons-list-item',
@@ -9,4 +9,8 @@ import { Component,Input} from '@angular/core';
 export class PokemonsListItemComponent {
 
     @Input() pokemon!: Pokemon;
+    @Output() pokemonClicked = new EventEmitter<string>();
+    handleClick(): void {
+      this.pokemonClicked.emit(this.pokemon?.name);
+    }
 }
