@@ -6,7 +6,7 @@ import { PokemonService } from 'src/app/services/pokemon.service';
 @Component({
   selector: 'app-pokemon-details',
   templateUrl: './pokemon-details.component.html',
-  styleUrls: ['./pokemon-details.component.scss']
+  styleUrls: ['./pokemon-details.component.scss','./pokemon-details.component.bis.scss']
 })
 export class PokemonDetailsComponent implements OnInit,OnDestroy {
   subscription = new Subscription();
