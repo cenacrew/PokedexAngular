@@ -82,6 +82,13 @@ export class PokemonService {
     );
   }
 
+  getFirstTypeById(id: number): Observable<string> {
+    const url = `${this.POKEAPI_URL}/${id}`;
+    return this.http.get(url).pipe(
+      map((pokemon: any) => pokemon.types[0].type.name)
+    );
+  }
+
   private getIdFromUrl(url: string): number {
     return +url.split('/').slice(-2, -1);
   }
