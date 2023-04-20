@@ -1,67 +1,310 @@
-/* Parent container styles */
+/* Use the :host selector to apply styles to the component itself */
+:host {
+  /* Add some padding to the component */
+  padding: 2rem;
+}
+
+/* Style the error message component */
+app-error-message {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #f00;
+  margin-bottom: 1rem;
+}
+
+/* Style the back link */
+a {
+  font-size: 1rem;
+  text-decoration: none;
+  color: #333;
+  background-color: #eee;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  transition: background-color 0.2s ease-in-out;
+
+  &:hover {
+    background-color: #ccc;
+  }
+}
+
+/* Style the main container */
 .pokemon {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    margin: 1rem;
-    padding: 1rem;
-    background-color: #fff;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
-    border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 1rem;
+  padding: 1rem;
+  background-color: #fff;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+}
+
+/* Style the ID */
+.pokemon_id {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  color: #333;
+}
+
+/* Style the sprite */
+.pokemons_sprite {
+  margin-bottom: 1rem;
+
+  img {
+    width: 76%;
+    margin-left: 12%;
   }
-  
-  /* ID container styles */
-  .pokemon_id {
-    font-size: 2rem;
-    font-weight: bold;
-    margin-bottom: 1rem;
+}
+
+/* Style the name */
+.pokemon_name {
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-transform: capitalize;
+  margin-bottom: 0.5rem;
+  color: #333;
+}
+
+.pokemon_generation {
+  font-size: 1rem;
+  margin-bottom: 1rem;
+  color: #666;
+}
+
+/* Style the abilities section */
+.pokemon_abilities {
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.pokemon_abilities_title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: #333;
+  margin-bottom: 0.5rem;
+}
+
+.pokemon_abilities_list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+
+  div {
+    background-color: #f8f8f8;
+    border: 1px solid #ccc;
+    padding: 0.5rem;
+    border-radius: 0.25rem;
+    margin: 0.25rem;
+    font-size: 1rem;
     color: #333;
+    text-transform: capitalize;
   }
-  
-  /* Sprite container styles */
-  .pokemon_sprite {
-    margin-bottom: 1rem;
-  }
-  
-  /* Name container styles */
-  .pokemon_name {
+}
+
+/* Style the moves section */
+.pokemon_moves {
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+
+  .pokemon_moves_title {
     font-size: 1.5rem;
     font-weight: bold;
-    text-transform: capitalize;
+    text-transform: uppercase;
+    color: #333;
     margin-bottom: 0.5rem;
-    color: #333;
   }
-  
-  /* Generation container styles */
-  .pokemon_generation {
-    font-size: 1rem;
-    margin-bottom: 1rem;
-    color: #666;
-  }
-  
-  /* Error message container styles */
-  app-error-message {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 1.2rem;
-    font-weight: bold;
-    color: #f00;
-    margin-bottom: 1rem;
-  }
-  
-  /* Back button styles */
-  a {
-    font-size: 1rem;
-    text-decoration: none;
-    color: #333;
-    background-color: #eee;
-    padding: 0.5rem 1rem;
-    border-radius: 5px;
-    transition: background-color 0.2s ease-in-out;
-  
-    &:hover {
-      background-color: #ccc;
+
+  .pokemon_moves_list {
+    ul {
+      list-style: none;
+      padding: 0;
+      display: block;
+      column-count: 10;
+      /* adjust the number of columns as per your requirement */
+      column-gap: 20px;
+      /* add a gap between columns */
+
+      li {
+        font-size: 1.2rem;
+        color: #666;
+
+        display: inline-block;
+        margin: 10px 0;
+        padding: 10px;
+        border: 2px solid black;
+        border-radius: 5px;
+        background-color: #f1f1f1;
+        }
+      }
     }
   }
+
+
+
+/* Style the types */
+.pokemon_types {
+  margin-bottom: 1rem;
+
+  /* Add a different color for each type */
+  span {
+    display: inline-block;
+    margin-right: 0.5rem;
+    padding: 0.25rem;
+    border-radius: 0.25rem;
+    text-transform: capitalize;
+
+    &.normal {
+      background-color: #a8a878;
+    }
+
+    &.fire {
+      background-color: #f08030;
+    }
+
+    &.water {
+      background-color: #6890f0;
+    }
+
+    &.electric {
+      background-color: #f8d030;
+    }
+
+    &.grass {
+      background-color: #78c850;
+    }
+
+    &.ice {
+      background-color: #98d8d8;
+    }
+
+    &.fighting {
+      background-color: #c03028;
+    }
+
+    &.poison {
+      background-color: #a040a0;
+    }
+
+    &.ground {
+      background-color: #e0c068;
+    }
+
+    &.flying {
+      background-color: #a890f0;
+    }
+
+    &.psychic {
+      background-color: #f85888;
+    }
+
+    &.bug {
+      background-color: #a8b820;
+    }
+
+    &.rock {
+      background-color: #b8a038;
+    }
+
+    &.ghost {
+      background-color: #705898;
+    }
+
+    &.dragon {
+      background-color: #7038f8;
+    }
+
+    &.dark {
+      background-color: #705848;
+    }
+
+    &.steel {
+      background-color: #b8b8d0;
+    }
+
+    &.fairy {
+      background-color: #ee99ac;
+    }
+  }
+}
+
+.pokemon_stats_title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: #333;
+  margin-bottom: 0.5rem;
+  margin-top: 2.5em;
+}
+
+/* Style the stats section */
+.pokemon_stats {
+  margin-top: 0.7rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width: 100%;
+
+  div {
+    width: 30%;
+    margin-bottom: 1rem;
+    padding: 1rem;
+    background-color: #f8f8f8;
+    border-radius: 10px;
+    font-weight: bold;
+    text-align: center;
+    color: #333;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+
+    &::before {
+      content: attr(data-testid);
+      display: block;
+      font-size: 0.8rem;
+      font-weight: normal;
+      color: #666;
+      margin-bottom: 0.5rem;
+      text-transform: uppercase;
+    }
+
+  }
+
+  /* Style the HP stat */
+  .pokemon_stats_hp {
+    background-color: #f08080;
+  }
+
+  /* Style the Attack stat */
+  .pokemon_stats_attack {
+    background-color: #f4a460;
+  }
+
+  /* Style the Defense stat */
+  .pokemon_stats_defense {
+    background-color: #87ceeb;
+  }
+
+  /* Style the Special Attack stat */
+  .pokemon_stats_special-attack {
+    background-color: #d8bfd8;
+  }
+
+  /* Style the Special Defense stat */
+  .pokemon_stats_special-defense {
+    background-color: #afeeee;
+  }
+
+  /* Style the Speed stat */
+  .pokemon_stats_speed {
+    background-color: #98fb98;
+  }
+}

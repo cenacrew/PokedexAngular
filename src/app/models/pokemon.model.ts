@@ -9,5 +9,6 @@ export type Pokemon = {
     moves?:string[];
     height?:number;
     weight?:number;
+    firstType?:string;
 
 }

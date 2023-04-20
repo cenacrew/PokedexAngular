@@ -1,5 +1,5 @@
 <app-error-message [errorMessage]="errorMessage"></app-error-message>
-
+<a routerLink="..">Back</a>
 <div *ngIf="pokemon" class="pokemon" appShadow>
   <div class="pokemon_id" data-testid="id">
     {{ pokemon.id }}
@@ -15,7 +15,7 @@
     {{ pokemon.name }}
   </div>
   <div class="pokemon_types" data-testid="types">
-    <span *ngFor="let type of pokemon.types">
+    <span class={{type}} *ngFor="let type of pokemon.types">
       {{ type }}
     </span>
   </div>
@@ -38,24 +38,27 @@
       </div>
     </div>
   </div>
+  <div class="pokemon_stats_title">
+    Stats
+  </div>
   <div class="pokemon_stats" data-testid="stats">
     <div class="pokemon_stats_hp" data-testid="hp">
-      HP: {{ getStatValue('hp') }}
-    </div>
-    <div class="pokemon_stats_attack" data-testid="attack">
-      Attack: {{ getStatValue('attack') }}
-    </div>
-    <div class="pokemon_stats_defense" data-testid="defense">
-      Defense: {{ getStatValue('defense') }}
-    </div>
-    <div class="pokemon_stats_special-attack" data-testid="special-attack">
-      Special Attack: {{ getStatValue('special-attack') }}
-    </div>
-    <div class="pokemon_stats_special-defense" data-testid="special-defense">
-      Special Defense: {{ getStatValue('special-defense') }}
+      {{ getStatValue('hp') }}
     </div>
     <div class="pokemon_stats_speed" data-testid="speed">
-      Speed: {{ getStatValue('speed') }}
+      {{ getStatValue('speed') }}
+    </div>
+    <div class="pokemon_stats_attack" data-testid="attack">
+      {{ getStatValue('attack') }}
+    </div>
+    <div class="pokemon_stats_defense" data-testid="defense">
+      {{ getStatValue('defense') }}
+    </div>
+    <div class="pokemon_stats_special-attack" data-testid="special-attack">
+      {{ getStatValue('special-attack') }}
+    </div>
+    <div class="pokemon_stats_special-defense" data-testid="special-defense">
+      {{ getStatValue('special-defense') }}
     </div>
   </div>
   <div class="pokemon_moves" data-testid="moves"
@@ -64,12 +67,14 @@
       Moves
     </div>
     <div class="pokemon_moves_list">
-      <div *ngFor="let move of pokemon.moves">
+      <ul>
+      <li *ngFor="let move of pokemon.moves">
         {{ move }}
-      </div>
+      </li>
+    </ul>
     </div>  
 </div>
 </div>
 
 
-<a routerLink="..">Back</a>
+

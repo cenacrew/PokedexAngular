@@ -24,12 +24,13 @@ export class PokemonService {
           const name = pokemon.name;
           const generation = this.getGeneration(id);
           const sprite = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${id}.png`;
-
           return { id, name, generation, sprite } as Pokemon;
         });
       })
     );
   }
+
+
 
   getPokemonById(id: number): Observable<Pokemon> {
     return this.http.get(`${this.POKEAPI_URL}/${id}`).pipe(
@@ -37,7 +38,7 @@ export class PokemonService {
         const id = response.id;
         const name = response.name;
         const generation = this.getGeneration(id);
-        const sprite = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${id}.png`;
+        const sprite = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${id}.png`;
         const types = response.types.map((type: any) => type.type.name);
         const stats = response.stats.map((stat: any) => { return { name: stat.stat.name, value: stat.base_stat } });
         const height = response.height * 10 ;
