@@ -5,16 +5,13 @@ import { map } from 'rxjs/operators';
 import { Pokemon } from '../models/pokemon.model';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class PokemonService {
-
   private readonly POKEAPI_URL = 'https://pokeapi.co/api/v2/pokemon';
-  private readonly POKE_LIMIT = '?limit=1008';
+  private readonly POKE_LIMIT = 1008;
 
   constructor(private http: HttpClient) {}
-
-
 
   getPokemon(): Observable<Pokemon[]> {
     return this.http.get(`${this.POKEAPI_URL}${this.POKE_LIMIT}`).pipe(
@@ -30,8 +27,6 @@ export class PokemonService {
     );
   }
 
-
-
   getPokemonById(id: number): Observable<Pokemon> {
     return this.http.get(`${this.POKEAPI_URL}/${id}`).pipe(
       map((response: any) => {
@@ -40,15 +35,51 @@ export class PokemonService {
         const generation = this.getGeneration(id);
         const sprite = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${id}.png`;
         const types = response.types.map((type: any) => type.type.name);
-        const stats = response.stats.map((stat: any) => { return { name: stat.stat.name, value: stat.base_stat } });
-        const height = response.height * 10 ;
+        const stats = response.stats.map((stat: any) => {
+          return { name: stat.stat.name, value: stat.base_stat };
+        });
+        const height = response.height * 10;
         const weight = response.weight / 10;
         const moves = response.moves.map((move: any) => move.move.name);
-        const abilities = response.abilities.map((ability: any) => ability.ability.name);
-        return { id, name, generation, sprite, types, stats, height, weight, moves , abilities} as Pokemon;
+        const abilities = response.abilities.map(
+          (ability: any) => ability.ability.name
+        );
+        let next: number;
+        let prev : number;
+        if (id < this.POKE_LIMIT) {
+          next = id + 1;
+        } else {
+          next = this.POKE_LIMIT;
+        }
+        if (id > 1) {
+          prev = id - 1;
+        } else {
+          prev = 1;
+        }
+        const idPrev = prev;
+        const idNext = next;
+
+        const nextSprite = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${idNext}.png`;
+        const prevSprite = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${idPrev}.png`;
+
+        return {
+          id,
+          name,
+          generation,
+          sprite,
+          types,
+          stats,
+          height,
+          weight,
+          moves,
+          abilities,
+          idPrev,
+          idNext,
+          nextSprite,
+          prevSprite,
+        } as Pokemon;
       })
     );
-    
   }
 
   private getIdFromUrl(url: string): number {
@@ -70,7 +101,7 @@ export class PokemonService {
       return 6;
     } else if (id <= 809) {
       return 7;
-    } else if (id <= 905){
+    } else if (id <= 905) {
       return 8;
     } else {
       return 9;

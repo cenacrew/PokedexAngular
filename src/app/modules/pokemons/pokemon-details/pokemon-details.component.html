@@ -1,15 +1,33 @@
 <app-error-message [errorMessage]="errorMessage"></app-error-message>
-<a routerLink="..">Back</a>
+<a class="backButton" routerLink="..">Back</a>
 <div *ngIf="pokemon" class="pokemon" appShadow>
   <div class="pokemon_id" data-testid="id">
     {{ pokemon.id }}
   </div>
-  <div class="pokemons_sprite">
-    <img
-      data-testid="sprite"
-      [src]="pokemon.sprite"
-      alt="{{ pokemon.name }} sprite"
-    />
+  <div class="gallery">
+    <div class="previousPokemon">
+      <a routerLink="../{{pokemon.idPrev}}">
+        <img
+        data-testid="previousSprite"
+        [src]="pokemon.prevSprite"
+        alt="{{ pokemon.idPrev }} sprite"
+      /></a>
+    </div>
+    <div class="pokemons_sprite">
+      <img
+        data-testid="sprite"
+        [src]="pokemon.sprite"
+        alt="{{ pokemon.name }} sprite"
+      />
+    </div>
+    <div class="nextPokemon">
+      <a routerLink="../{{pokemon.idNext}}">
+        <img
+        data-testid="nextSprite"
+        [src]="pokemon.nextSprite"
+        alt="{{ pokemon.idNext }} sprite"
+      /></a>
+    </div>
   </div>
   <div class="pokemon_name" data-testid="name">
     {{ pokemon.name }}

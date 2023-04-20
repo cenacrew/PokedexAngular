@@ -10,5 +10,9 @@ export type Pokemon = {
     height?:number;
     weight?:number;
     firstType?:string;
+    idNext?:number;
+    idPrev?:number;
+    nextSprite?:string;
+    prevSprite?:string;
 
 }
