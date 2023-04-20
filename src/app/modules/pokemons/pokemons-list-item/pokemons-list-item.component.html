@@ -1,4 +1,4 @@
-<div shadow highlight class="pokemons_list_item" (click)="handleClick($event)">
+<div shadow highlight class="pokemons_list_item" id="{{ pokemon.id }}" (click)="handleClick($event)" >
   <div class="pokemons_list_item_id" data-testid="id">
     <span>{{ pokemon.id }}</span>
   </div>

@@ -1,16 +1,15 @@
 <app-error-message [errorMessage]="errorMessage"></app-error-message>
-<a class="backButton" routerLink="..">Back</a>
 <div *ngIf="pokemon" class="pokemon" appShadow>
   <div class="pokemon_id" data-testid="id">
     {{ pokemon.id }}
   </div>
   <div class="gallery">
     <div class="previousPokemon">
-      <a routerLink="../{{pokemon.idPrev}}">
+      <a routerLink="../{{ pokemon.idPrev }}">
         <img
-        data-testid="previousSprite"
-        [src]="pokemon.prevSprite"
-        alt="{{ pokemon.idPrev }} sprite"
+          data-testid="previousSprite"
+          [src]="pokemon.prevSprite"
+          alt="{{ pokemon.idPrev }} sprite"
       /></a>
     </div>
     <div class="pokemons_sprite">
@@ -21,11 +20,11 @@
       />
     </div>
     <div class="nextPokemon">
-      <a routerLink="../{{pokemon.idNext}}">
+      <a routerLink="../{{ pokemon.idNext }}">
         <img
-        data-testid="nextSprite"
-        [src]="pokemon.nextSprite"
-        alt="{{ pokemon.idNext }} sprite"
+          data-testid="nextSprite"
+          [src]="pokemon.nextSprite"
+          alt="{{ pokemon.idNext }} sprite"
       /></a>
     </div>
   </div>
@@ -33,66 +32,53 @@
     {{ pokemon.name }}
   </div>
   <div class="pokemon_types" data-testid="types">
-    <span class={{type}} *ngFor="let type of pokemon.types">
+    <span class="{{ type }}" *ngFor="let type of pokemon.types">
       {{ type }}
     </span>
   </div>
   <div class="pokemon_generation" data-testid="generation">
     gen {{ pokemon.generation }}
   </div>
-  <div class="pokemon_height" data-testid="height">
-    {{ pokemon.height }} cm
-  </div>
-  <div class="pokemon_weight" data-testid="weight">
-    {{ pokemon.weight }} KG
-  </div>
+  <div class="pokemon_height" data-testid="height">{{ pokemon.height }} cm</div>
+  <div class="pokemon_weight" data-testid="weight">{{ pokemon.weight }} KG</div>
   <div class="pokemon_abilities" data-testid="abilities">
-    <div class="pokemon_abilities_title">
-      Abilities
-    </div>
+    <div class="pokemon_abilities_title">Abilities</div>
     <div class="pokemon_abilities_list">
       <div *ngFor="let ability of pokemon.abilities">
         {{ ability }}
       </div>
     </div>
   </div>
-  <div class="pokemon_stats_title">
-    Stats
-  </div>
+  <div class="pokemon_stats_title">Stats</div>
   <div class="pokemon_stats" data-testid="stats">
     <div class="pokemon_stats_hp" data-testid="hp">
-      {{ getStatValue('hp') }}
+      {{ getStatValue("hp") }}
     </div>
     <div class="pokemon_stats_speed" data-testid="speed">
-      {{ getStatValue('speed') }}
+      {{ getStatValue("speed") }}
     </div>
     <div class="pokemon_stats_attack" data-testid="attack">
-      {{ getStatValue('attack') }}
+      {{ getStatValue("attack") }}
     </div>
     <div class="pokemon_stats_defense" data-testid="defense">
-      {{ getStatValue('defense') }}
+      {{ getStatValue("defense") }}
     </div>
     <div class="pokemon_stats_special-attack" data-testid="special-attack">
-      {{ getStatValue('special-attack') }}
+      {{ getStatValue("special-attack") }}
     </div>
     <div class="pokemon_stats_special-defense" data-testid="special-defense">
-      {{ getStatValue('special-defense') }}
+      {{ getStatValue("special-defense") }}
     </div>
   </div>
-  <div class="pokemon_moves" data-testid="moves"
-    *ngIf="pokemon.moves">
-    <div class="pokemon_moves_title">
-      Moves
-    </div>
+  <div class="pokemon_moves" data-testid="moves" *ngIf="pokemon.moves">
+    <div class="pokemon_moves_title">Moves</div>
     <div class="pokemon_moves_list">
       <ul>
-      <li *ngFor="let move of pokemon.moves">
-        {{ move }}
-      </li>
-    </ul>
-    </div>  
+        <li *ngFor="let move of pokemon.moves">
+          {{ move }}
+        </li>
+      </ul>
+    </div>
+  </div>
 </div>
-</div>
-
-
-
+<a class="backButton" routerLink="..">Back</a>
