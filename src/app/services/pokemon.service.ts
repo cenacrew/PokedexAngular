@@ -10,7 +10,7 @@ import { Pokemon } from '../models/pokemon.model';
 export class PokemonService {
 
   private readonly POKEAPI_URL = 'https://pokeapi.co/api/v2/pokemon';
-  private readonly POKE_LIMIT = '?limit=1000';
+  private readonly POKE_LIMIT = '?limit=1008';
 
   constructor(private http: HttpClient) {}
 
