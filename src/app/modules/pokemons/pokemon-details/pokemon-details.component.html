@@ -28,6 +28,16 @@
   <div class="pokemon_weight" data-testid="weight">
     {{ pokemon.weight }} KG
   </div>
+  <div class="pokemon_abilities" data-testid="abilities">
+    <div class="pokemon_abilities_title">
+      Abilities
+    </div>
+    <div class="pokemon_abilities_list">
+      <div *ngFor="let ability of pokemon.abilities">
+        {{ ability }}
+      </div>
+    </div>
+  </div>
   <div class="pokemon_stats" data-testid="stats">
     <div class="pokemon_stats_hp" data-testid="hp">
       HP: {{ getStatValue('hp') }}
