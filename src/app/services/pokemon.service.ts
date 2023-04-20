@@ -14,7 +14,7 @@ export class PokemonService {
   constructor(private http: HttpClient) {}
 
   getPokemon(): Observable<Pokemon[]> {
-    return this.http.get(`${this.POKEAPI_URL}${this.POKE_LIMIT}`).pipe(
+    return this.http.get(`${this.POKEAPI_URL}?limit=${this.POKE_LIMIT}`).pipe(
       map((response: any) => {
         return response.results.map((pokemon: any) => {
           const id = this.getIdFromUrl(pokemon.url);
