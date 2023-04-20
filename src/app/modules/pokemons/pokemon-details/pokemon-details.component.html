@@ -48,7 +48,18 @@
       Speed: {{ getStatValue('speed') }}
     </div>
   </div>
-  
+  <div class="pokemon_moves" data-testid="moves"
+    *ngIf="pokemon.moves">
+    <div class="pokemon_moves_title">
+      Moves
+    </div>
+    <div class="pokemon_moves_list">
+      <div *ngFor="let move of pokemon.moves">
+        {{ move }}
+      </div>
+    </div>  
 </div>
+</div>
+
 
 <a routerLink="..">Back</a>

@@ -42,8 +42,8 @@ export class PokemonService {
         const stats = response.stats.map((stat: any) => { return { name: stat.stat.name, value: stat.base_stat } });
         const height = response.height * 10 ;
         const weight = response.weight / 10;
-        console.log(stats)
-        return { id, name, generation, sprite, types, stats, height, weight} as Pokemon;
+        const moves = response.moves.map((move: any) => move.move.name);
+        return { id, name, generation, sprite, types, stats, height, weight, moves} as Pokemon;
       })
     );
     
