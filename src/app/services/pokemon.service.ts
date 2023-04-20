@@ -38,8 +38,9 @@ export class PokemonService {
         const name = response.name;
         const generation = this.getGeneration(id);
         const sprite = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${id}.png`;
+        const types = response.types.map((type: any) => type.type.name);
 
-        return { id, name, generation, sprite } as Pokemon;
+        return { id, name, generation, sprite,types } as Pokemon;
       })
     );
   }

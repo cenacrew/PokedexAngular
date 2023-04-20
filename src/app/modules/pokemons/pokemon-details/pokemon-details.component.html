@@ -14,8 +14,13 @@
   <div class="pokemon_name" data-testid="name">
     {{pokemon.name}}
   </div>
+  <div class="pokemon_types" data-testid="types">
+    <span *ngFor="let type of pokemon.types">
+      {{type}}
+    </span>
+  </div>
   <div class="pokemon_generation" data-testid="generation">
-    {{pokemon.generation}}
+    gen {{pokemon.generation}}
   </div>
 </div>
 
