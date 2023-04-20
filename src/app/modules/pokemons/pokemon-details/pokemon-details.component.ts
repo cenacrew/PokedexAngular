@@ -30,4 +30,10 @@ export class PokemonDetailsComponent implements OnInit,OnDestroy {
   ngOnDestroy(): void {
     this.subscription.unsubscribe();
   }
+
+  getStatValue(statName: string): number {
+    const stat = this.pokemon?.stats?.find(stat => stat.name === statName);
+    return stat ? stat.value : 0;
+  }
+  
 }

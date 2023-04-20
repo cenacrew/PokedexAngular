@@ -7,4 +7,7 @@ export type Pokemon = {
     stats?:{name:string, value:number}[];
     abilities?:string[];
     moves?:string[];
+    height?:number;
+    weight?:number;
+
 }

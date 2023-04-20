@@ -39,10 +39,14 @@ export class PokemonService {
         const generation = this.getGeneration(id);
         const sprite = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${id}.png`;
         const types = response.types.map((type: any) => type.type.name);
-
-        return { id, name, generation, sprite,types } as Pokemon;
+        const stats = response.stats.map((stat: any) => { return { name: stat.stat.name, value: stat.base_stat } });
+        const height = response.height * 10 ;
+        const weight = response.weight / 10;
+        console.log(stats)
+        return { id, name, generation, sprite, types, stats, height, weight} as Pokemon;
       })
     );
+    
   }
 
   private getIdFromUrl(url: string): number {

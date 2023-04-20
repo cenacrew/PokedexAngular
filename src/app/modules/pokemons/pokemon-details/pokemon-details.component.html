@@ -2,7 +2,7 @@
 
 <div *ngIf="pokemon" class="pokemon" appShadow>
   <div class="pokemon_id" data-testid="id">
-    {{pokemon.id}}
+    {{ pokemon.id }}
   </div>
   <div class="pokemons_sprite">
     <img
@@ -12,16 +12,43 @@
     />
   </div>
   <div class="pokemon_name" data-testid="name">
-    {{pokemon.name}}
+    {{ pokemon.name }}
   </div>
   <div class="pokemon_types" data-testid="types">
     <span *ngFor="let type of pokemon.types">
-      {{type}}
+      {{ type }}
     </span>
   </div>
   <div class="pokemon_generation" data-testid="generation">
-    gen {{pokemon.generation}}
+    gen {{ pokemon.generation }}
   </div>
+  <div class="pokemon_height" data-testid="height">
+    {{ pokemon.height }} cm
+  </div>
+  <div class="pokemon_weight" data-testid="weight">
+    {{ pokemon.weight }} KG
+  </div>
+  <div class="pokemon_stats" data-testid="stats">
+    <div class="pokemon_stats_hp" data-testid="hp">
+      HP: {{ getStatValue('hp') }}
+    </div>
+    <div class="pokemon_stats_attack" data-testid="attack">
+      Attack: {{ getStatValue('attack') }}
+    </div>
+    <div class="pokemon_stats_defense" data-testid="defense">
+      Defense: {{ getStatValue('defense') }}
+    </div>
+    <div class="pokemon_stats_special-attack" data-testid="special-attack">
+      Special Attack: {{ getStatValue('special-attack') }}
+    </div>
+    <div class="pokemon_stats_special-defense" data-testid="special-defense">
+      Special Defense: {{ getStatValue('special-defense') }}
+    </div>
+    <div class="pokemon_stats_speed" data-testid="speed">
+      Speed: {{ getStatValue('speed') }}
+    </div>
+  </div>
+  
 </div>
 
 <a routerLink="..">Back</a>
