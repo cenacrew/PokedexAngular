@@ -15,7 +15,6 @@ export class MoveService {
   getMoveByName(name: string): Observable<Move> {
     return this.http.get(`${this.POKEAPI_URL}/${name}`).pipe(
       map((response: any) => {
-        return response.results.map((move: any) => {
           const id = response.id;
           const name = response.name;
           const accuracy = response.accuracy;
@@ -26,7 +25,6 @@ export class MoveService {
           const effect_entries = response.effect_entries[0].short_effect;
           const type = response.type.name;
           return { id, name, accuracy, effect_chance, pp, power, damage_class, effect_entries, type  } as Move;
-        });
       })
     );
   }

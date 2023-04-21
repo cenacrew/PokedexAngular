@@ -12,7 +12,15 @@
   </div>
   <div class="pokemon_moves_list">
     <ul>
-      <li *ngFor="let move of moves">{{ move }}</li>
+      <li *ngFor="let move of moves">
+        <h3>{{move.name}}</h3>
+        <p>Accuracy: {{move.accuracy}}</p>
+        <p>PP: {{move.pp}}</p>
+        <p>Power: {{move.power}}</p>
+        <p>Damage Class: {{move.damage_class}}</p>
+        <p>Type: {{move.type}}</p>
+        <p>Effect: {{move.effect_entries}}</p>
+      </li>
     </ul>
   </div>
 </div>
