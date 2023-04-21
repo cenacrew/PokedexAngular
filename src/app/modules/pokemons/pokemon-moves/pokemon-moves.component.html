@@ -1,7 +1,7 @@
 <app-error-message [errorMessage]="errorMessage"></app-error-message>
 <a class="backButton" routerLink="..">Back</a>
 <div class="pokemon">
-  <div class="pokemons_sprite">
+  <div class="pokemon_sprite">
     <img
       data-testid="sprite"
       src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/{{
@@ -17,7 +17,7 @@
         <p>Accuracy: {{move.accuracy}}</p>
         <p>PP: {{move.pp}}</p>
         <p>Power: {{move.power}}</p>
-        <p>Damage Class: {{move.damage_class}}</p>
+        <p>Class: {{move.damage_class}}</p>
         <p>Type: {{move.type}}</p>
         <p>Effect: {{move.effect_entries}}</p>
       </li>
