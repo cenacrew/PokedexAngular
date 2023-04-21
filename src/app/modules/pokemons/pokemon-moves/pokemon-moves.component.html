@@ -1,0 +1,18 @@
+<app-error-message [errorMessage]="errorMessage"></app-error-message>
+<a class="backButton" routerLink="..">Back</a>
+<div class="pokemon">
+  <div class="pokemons_sprite">
+    <img
+      data-testid="sprite"
+      src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/{{
+        id
+      }}.png"
+      alt="actual sprite"
+    />
+  </div>
+  <div class="pokemon_moves_list">
+    <ul>
+      <li *ngFor="let move of moves">{{ move }}</li>
+    </ul>
+  </div>
+</div>

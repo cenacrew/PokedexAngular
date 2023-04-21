@@ -1,0 +1,64 @@
+/* Style the error message component */
+app-error-message {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #f00;
+    margin-bottom: 1rem;
+  }
+  
+  /* Style the back link */
+  .backButton {
+    font-size: 1rem;
+    text-decoration: none;
+    color: #333;
+    background-color: #eee;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    transition: background-color 0.2s ease-in-out;
+  
+    &:hover {
+      background-color: #ccc;
+    }
+  }
+
+
+
+.pokemon {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 1rem;
+    padding: 1rem;
+    background-color: #fff;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+  }
+
+
+.pokemon_moves_list {
+    ul {
+      list-style: none;
+      padding: 0;
+      display: block;
+      column-count: 10;
+      /* adjust the number of columns as per your requirement */
+      column-gap: 20px;
+      /* add a gap between columns */
+
+      li {
+        font-size: 1.2rem;
+        color: #666;
+
+        display: inline-block;
+        margin: 10px 0;
+        padding: 10px;
+        border: 2px solid black;
+        border-radius: 5px;
+        background-color: #f1f1f1;
+        }
+      }
+    }

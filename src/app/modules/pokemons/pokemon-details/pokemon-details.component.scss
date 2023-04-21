@@ -118,30 +118,6 @@ app-error-message {
     color: #333;
     margin-bottom: 0.5rem;
   }
-
-  .pokemon_moves_list {
-    ul {
-      list-style: none;
-      padding: 0;
-      display: block;
-      column-count: 10;
-      /* adjust the number of columns as per your requirement */
-      column-gap: 20px;
-      /* add a gap between columns */
-
-      li {
-        font-size: 1.2rem;
-        color: #666;
-
-        display: inline-block;
-        margin: 10px 0;
-        padding: 10px;
-        border: 2px solid black;
-        border-radius: 5px;
-        background-color: #f1f1f1;
-        }
-      }
-    }
   }
 
 
