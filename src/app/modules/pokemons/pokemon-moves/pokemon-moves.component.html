@@ -12,14 +12,14 @@
   </div>
   <div class="pokemon_moves_list">
     <ul>
-      <li *ngFor="let move of moves" class={{move.type}}>
-        <h3>{{move.name}}</h3>
-        <p>Accuracy: {{move.accuracy}}</p>
-        <p>PP: {{move.pp}}</p>
-        <p>Power: {{move.power}}</p>
-        <p>Class: {{move.damage_class}}</p>
-        <p>Type: {{move.type}}</p>
-        <p>Effect: {{move.effect_entries}}</p>
+      <li *ngFor="let move of moves" class="{{ move.type }}">
+        <h3 class="moveName">{{ move.name }}</h3>
+        <p class="accuracy">Accuracy: {{ move.accuracy }}%</p>
+        <p class="pp">PP: {{ move.pp }}</p>
+        <p class="power">Power: {{ move.power }}</p>
+        <p class="class">Class: {{ move.damage_class }}</p>
+        <p class="type">Type: {{ move.type }}</p>
+        <p class="effect">Effect: {{ move.effect_entries }}</p>
       </li>
     </ul>
   </div>
