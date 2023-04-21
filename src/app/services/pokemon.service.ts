@@ -40,7 +40,7 @@ export class PokemonService {
         });
         const height = response.height * 10;
         const weight = response.weight / 10;
-        const moves = response.moves.map((move: any) => move.move.name);
+        const nbMoves = response.moves.length;
         const abilities = response.abilities.map(
           (ability: any) => ability.ability.name
         );
@@ -71,13 +71,23 @@ export class PokemonService {
           stats,
           height,
           weight,
-          moves,
           abilities,
+          nbMoves,
           idPrev,
           idNext,
           nextSprite,
           prevSprite,
         } as Pokemon;
+      })
+    );
+  }
+
+  getPokemonMovesById(id: number): Observable<string[]> {
+    const url = `${this.POKEAPI_URL}/${id}`;
+    return this.http.get(url).pipe(
+      map((pokemon: any) => {
+        const moves = pokemon.moves.map((move: any) => move.move.name);
+        return moves;
       })
     );
   }
@@ -110,8 +120,10 @@ export class PokemonService {
       return 7;
     } else if (id <= 905) {
       return 8;
-    } else {
+    } else if (id <=1008) {
       return 9;
+    } else {
+      return 42;
     }
   }
 }

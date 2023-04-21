@@ -70,15 +70,11 @@
       {{ getStatValue("special-defense") }}
     </div>
   </div>
-  <div class="pokemon_moves" data-testid="moves" *ngIf="pokemon.moves">
+  <div class="pokemon_moves" data-testid="moves" *ngIf="pokemon.nbMoves">
     <div class="pokemon_moves_title">Moves</div>
-    <div class="pokemon_moves_list">
-      <ul>
-        <li *ngFor="let move of pokemon.moves">
-          {{ move }}
-        </li>
-      </ul>
-    </div>
+      <button class="pokemon_moves_button" routerLink="../:id/moves">
+        See {{ pokemon.nbMoves }} moves
+      </button>
   </div>
 </div>
 <a class="backButton" routerLink="..">Back</a>

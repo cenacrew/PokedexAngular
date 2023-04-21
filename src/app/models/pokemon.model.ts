@@ -14,5 +14,6 @@ export type Pokemon = {
     idPrev?:number;
     nextSprite?:string;
     prevSprite?:string;
+    nbMoves?:number;
 
 }
