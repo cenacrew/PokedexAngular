@@ -9,7 +9,7 @@ const routes: Routes = [
   { path: 'pokemons', component: PokemonsListComponent },
   { path: 'pokemons/:id', component: PokemonDetailsComponent },
   { path: '', redirectTo: '/pokemons', pathMatch: 'full' },
-  { path: 'pokemons/id:/moves', component: PokemonMovesComponent },
+  { path: 'pokemons/:id/moves', component: PokemonMovesComponent },
 ];
 
 @NgModule({
